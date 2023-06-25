@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="537.0"
+            prefWidth="738.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.Home">
+    <left>
+        <TabPane fx:id="tab_container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                 prefHeight="200.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0"
+                 BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab id="get_contacts" onSelectionChanged="#get_contacts" text="Contacts">
+                    <content>
+                        <ListView fx:id="contacts_listview"   onMouseClicked="#get_contact_name" prefHeight="200.0"
+                                  prefWidth="200.0">
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                            <padding>
+                                <Insets bottom="10.0" top="10.0"/>
+                            </padding>
+                        </ListView>
+                    </content>
+                </Tab>
+                <Tab onSelectionChanged="#get_my_group" text="My Groups">
+                    <content>
+                        <ListView fx:id="my_groups_listview" onMouseClicked="#get_my_group_event" prefHeight="200.0"
+                                  prefWidth="200.0">
+                            <padding>
+                                <Insets bottom="10.0" top="10.0"/>
+                            </padding>
+                        </ListView>
+                    </content>
+                </Tab>
+                <Tab onSelectionChanged="#get_users" text="Users">
+                    <content>
+                        <ListView fx:id="users_listview" onMouseClicked="#get_user_name">
+                            <opaqueInsets>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                            </opaqueInsets>
+                            <padding>
+                                <Insets bottom="10.0" top="10.0"/>
+                            </padding>
+                        </ListView>
+                    </content>
+                </Tab>
+                <Tab onSelectionChanged="#get_all_group" text="All Groups">
+                    <content>
+                        <ListView fx:id="all_groups_listview" onMouseClicked="#get_all_group_event" prefHeight="200.0"
+                                  prefWidth="200.0">
+                            <padding>
+                                <Insets bottom="10.0" top="10.0"/>
+                            </padding>
+                        </ListView>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </left>
+    <center>
+        <VBox id="chat_" BorderPane.alignment="CENTER">
+            <children>
+                <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                            style="-fx-padding: 10px;">
+                    <center>
+                        <VBox id="main_frame" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                              BorderPane.alignment="CENTER">
+                            <children>
+                                <HBox style="-fx-padding: 5px;">
+                                    <children>
+                                        <Text fx:id="chat_name_txt" strokeType="OUTSIDE" strokeWidth="0.0"
+                                              text="Chat name">
+                                            <font>
+                                                <Font name="System Bold" size="18.0"/>
+                                            </font>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                                <TextArea fx:id="ms_txt" editable="false" prefHeight="401.0" prefWidth="518.0">
+                                    <font>
+                                        <Font size="14.0"/>
+                                    </font>
+                                </TextArea>
+                            </children>
+                        </VBox>
+                    </center>
+                    <bottom>
+                        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0"
+                              style="-fx-padding: 5px;" BorderPane.alignment="CENTER">
+                            <children>
+                                <TextField fx:id="msg_txt" disable="true" maxWidth="1.7976931348623157E308"
+                                           onAction="#send_msg" prefHeight="50.0" prefWidth="538.0"
+                                           style="-fx-background-radius: 15px;">
+                                    <opaqueInsets>
+                                        <Insets right="10.0"/>
+                                    </opaqueInsets>
+                                    <font>
+                                        <Font size="18.0"/>
+                                    </font>
+                                </TextField>
+                                <Button fx:id="btn_send" disable="true" maxHeight="-Infinity" maxWidth="-Infinity"
+                                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                                        onAction="#send_msg" prefHeight="50.0" prefWidth="52.0"
+                                        style="-fx-background-color: #00b20c; -fx-background-radius: 15px;" text="Send"
+                                        textFill="WHITE">
+                                    <opaqueInsets>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                                    </opaqueInsets>
+                                    <font>
+                                        <Font name="System Bold" size="14.0"/>
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </bottom>
+                </BorderPane>
+            </children>
+        </VBox>
+    </center>
+    <top>
+        <HBox prefHeight="40.0" prefWidth="738.0" style="-fx-background-color: #191970;" BorderPane.alignment="CENTER">
+            <children>
+                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="AIO">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="15.0" right="470.0" top="5.0"/>
+                    </HBox.margin>
+                    <font>
+                        <Font name="Viner Hand ITC" size="25.0"/>
+                    </font>
+                </Text>
+                <Button mnemonicParsing="false" onAction="#create_group" style="-fx-background-color: #378805;"
+                        text="Create Group" textFill="WHITE">
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </HBox.margin>
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #820924;" text="Logout"
+                        textFill="WHITE">
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </HBox.margin>
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </Button>
+            </children>
+            <padding>
+                <Insets bottom="2.0" left="5.0" right="5.0" top="2.0"/>
+            </padding>
+        </HBox>
+    </top>
+</BorderPane>

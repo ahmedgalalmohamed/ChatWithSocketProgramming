@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox id="user_name_frame" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseReleased="#open_chat" fx:controller="com.example.demo.Home" style="-fx-padding: 10px;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Text boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" text="user name" textOrigin="CENTER" wrappingWidth="78.125" />
+    </children>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+</VBox>
